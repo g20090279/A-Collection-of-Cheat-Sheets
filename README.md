@@ -1,1 +1,1 @@
-# A-Collection-of-Cheatsheets
+# A-Collection-of-Cheat-Sheets

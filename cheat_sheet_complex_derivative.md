@@ -1,5 +1,5 @@
 - Topic: Cheat Sheet of Complex Derivative
-- Last revised: Jan. 23, 2023
+- Last revised: June 30, 2023
 
 Table of Content
 1. Symbols and Variables   
@@ -13,7 +13,7 @@ Table of Content
 
 One of the reasons for using complex numbers is the *fundamental theorem of algebra*:
 
-> A polynomial of degree n has exactly the n complex roots.
+> A polynomial of degree n has exactly n complex roots.
 
 The significant difference of the complex derivative of a complex analytic function compared to the differentiation of real calculus is that the infinity has two directions, the real axis and the imaginary axis. This is a very strong condition!
 
@@ -33,39 +33,39 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 
 ## Basic Properties of Linear Algebra
 
-|Equality|Comment|
-|:---:|:---:|
-| *The properties of **matrix inverse*** | |
-| $(\boldsymbol{AB})^{-1}=\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$ | |
-| $(\boldsymbol{ABC}...)^{-1}=...\boldsymbol{C}^{-1}\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$ | |
-| $\left(\boldsymbol{A}^T\right)^{-1}$ | |
-| *The properties of **matrix transpose*** | |
-| $(\boldsymbol{A}+\boldsymbol{B})^T=\boldsymbol{A}^T+\boldsymbol{B}^T$| |
-| $(\boldsymbol{AB})^{T}=\boldsymbol{B}^{T}\boldsymbol{A}^{T}$| |
-| $(\boldsymbol{ABC}...)^T=...\boldsymbol{C}^{-T}\boldsymbol{B}^{T}\boldsymbol{A}^{T}$| |
-| *The properties of **hermitian (complex conjugate)*** | |
-| $\left(\boldsymbol A^H\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^H$ | |
-| $(\boldsymbol{A}+\boldsymbol{B})^H=\boldsymbol{A}^H+\boldsymbol{B}^H$ | |
-| $(\boldsymbol{AB})^H=\boldsymbol{B}^H\boldsymbol{A}^H$ | |
-| $(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$ | |
-| *The properties of **Trace*** | Trace is only defined for a square matrix. |
-| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i A_{ii}$ | |
-| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$ | |
-| $\text{Tr}\lbrace\boldsymbol{A}^T\rbrace=\text{Tr}\lbrace\boldsymbol{A}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ |
-| $\text{Tr}\lbrace\boldsymbol{AB}\rbrace=\text{Tr}\lbrace\boldsymbol{BA}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$ |
-| $\text{Tr}(\boldsymbol{A}+\boldsymbol{B})=\text{Tr}(\boldsymbol{A})+\text{Tr}(\boldsymbol{B})$ | |
-| $\text{Tr}(\boldsymbol{ABC})=\text{Tr}(\boldsymbol{BCA})=\text{Tr}(\boldsymbol{CAB})$ | |
-| $\boldsymbol{a}^T\boldsymbol{a}=\text{Tr}(\boldsymbol{aa}^T)$ | |
-| $\text{Tr}\lbrace\boldsymbol{A}^T\boldsymbol{B}\rbrace=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$ | Connection between trace and vectorization |
-| *The definition of **Determinant*** | Let $\boldsymbol{A}$ be an $n\times n$ matrix. |
-| $\det(\boldsymbol{A})=\prod_{i}\lambda_i$ | $\lambda_i=\text{eig}(\boldsymbol{A})$ is the eigenvalue of matrix $\boldsymbol{A}$. |
-| $\det(c\boldsymbol{A})=c^N\det(\boldsymbol{A})$ | if $\boldsymbol{A}=\mathbb{C}^{N\times N}$ |
-| $\det(\boldsymbol{A}^T)=\det(\boldsymbol{A})$ | |
-| $\det(\boldsymbol{AB})=\det(\boldsymbol{A})\det(\boldsymbol{B})$ |
-| $\det(\boldsymbol{A}^{-1})=1/\det(\boldsymbol{A})$ | |
-| $\det(\boldsymbol{A}^N)=\det(\boldsymbol{A})^N$ | |
-| $\det(\boldsymbol{I}+\boldsymbol{uv}^T)=1+\boldsymbol{u}^T\boldsymbol{v}$ | |
-| $\det(\boldsymbol{I+AB})=\det(\boldsymbol{I+BA})$ | Sylvester's Determiant Theorem |
+|Index|Equality|Comment|
+|:---:|:---:|:---:|
+| *The properties of **matrix inverse*** |||
+|I1| $(\boldsymbol{AB})^{-1}=\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$ | |
+|I2| $(\boldsymbol{ABC}...)^{-1}=...\boldsymbol{C}^{-1}\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$ | |
+|I3| $\left(\boldsymbol{A}^T\right)^{-1}$ | |
+| *The properties of **matrix transpose*** |||
+|Tp1| $(\boldsymbol{A}+\boldsymbol{B})^T=\boldsymbol{A}^T+\boldsymbol{B}^T$| |
+|Tp2| $(\boldsymbol{AB})^{T}=\boldsymbol{B}^{T}\boldsymbol{A}^{T}$| |
+|Tp3| $(\boldsymbol{ABC}...)^T=...\boldsymbol{C}^{-T}\boldsymbol{B}^{T}\boldsymbol{A}^{T}$| |
+| *The properties of **hermitian (complex conjugate)*** |||
+|H1| $\left(\boldsymbol A^H\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^H$ | |
+|H2| $(\boldsymbol{A}+\boldsymbol{B})^H=\boldsymbol{A}^H+\boldsymbol{B}^H$ | |
+|H3| $(\boldsymbol{AB})^H=\boldsymbol{B}^H\boldsymbol{A}^H$ | |
+|H4| $(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$ | |
+| *The properties of **Trace*** | Trace is only defined for a square matrix. ||
+|Tc1| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i A_{ii}$ | |
+|Tc2| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$ | |
+|Tc3| $\text{Tr}\lbrace\boldsymbol{A}^T\rbrace=\text{Tr}\lbrace\boldsymbol{A}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ |
+|Tc4| $\text{Tr}\lbrace\boldsymbol{AB}\rbrace=\text{Tr}\lbrace\boldsymbol{BA}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$ |
+|Tc5| $\text{Tr}(\boldsymbol{A}+\boldsymbol{B})=\text{Tr}(\boldsymbol{A})+\text{Tr}(\boldsymbol{B})$ | |
+|Tc6| $\text{Tr}(\boldsymbol{ABC})=\text{Tr}(\boldsymbol{BCA})=\text{Tr}(\boldsymbol{CAB})$ | |
+|Tc7| $\boldsymbol{a}^T\boldsymbol{a}=\text{Tr}(\boldsymbol{aa}^T)$ | |
+|Tc8| $\text{Tr}\lbrace\boldsymbol{A}^T\boldsymbol{B}\rbrace=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$ | Connection between trace and vectorization |
+| *The definition of **Determinant*** | Let $\boldsymbol{A}$ be an $n\times n$ matrix. ||
+|D1| $\det(\boldsymbol{A})=\prod_{i}\lambda_i$ | $\lambda_i=\text{eig}(\boldsymbol{A})$ is the eigenvalue of matrix $\boldsymbol{A}$. |
+|D2| $\det(c\boldsymbol{A})=c^N\det(\boldsymbol{A})$ | if $\boldsymbol{A}=\mathbb{C}^{N\times N}$ |
+|D3| $\det(\boldsymbol{A}^T)=\det(\boldsymbol{A})$ | |
+|D4| $\det(\boldsymbol{AB})=\det(\boldsymbol{A})\det(\boldsymbol{B})$ |
+|D5| $\det(\boldsymbol{A}^{-1})=1/\det(\boldsymbol{A})$ | |
+|D6| $\det(\boldsymbol{A}^N)=\det(\boldsymbol{A})^N$ | |
+|D7| $\det(\boldsymbol{I}+\boldsymbol{uv}^T)=1+\boldsymbol{u}^T\boldsymbol{v}$ | |
+|D8| $\det(\boldsymbol{I+AB})=\det(\boldsymbol{I+BA})$ | Sylvester's Determiant Theorem |
 
 # Some Definitions
 
@@ -81,7 +81,7 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 | 5.1 | Cauchy-Riemann Equation | (Complex scalar as an example) If $f=u(x,y)+iv(x,y)$ is complex-differentiable (analytic) at $z=x+iy$, then by approaching from real and imaginary axes, we have equations: $\begin{cases}\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.\end{cases}$. This implies $\frac{\partial}{\partial z^\ast}f=0$ for Wirtinger Derivative. |
 | 6 | True Derivative |$df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$ <br/> Notice: This is the basic assumption: real part and imaginary part are independent|
 | 7 | Formal* Derivative / Wirtinger Derivative / $\mathbb{CR}$-Derivative | Let $z=x+iy$, where $x,y\in\mathbb{R}$. From 2, 3 and 6 in this table, we have $\mathbb{R}$-Derivative of $f(z)\overset{\Delta}{=}\frac{\partial}{\partial z}f\lvert_{z^\ast=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)$ <br/> Conjugate $\mathbb{R}$-Derivative of $f(z)\overset{\Delta}{=}\frac{\partial}{\partial z^\ast}f\lvert_{z=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)$. <br /> The variables $z$ and $z^\ast$ are treated as independent variables. (Formulated by replacing $dx$ and $dy$ in basic assumption with complex differentials.) <br/> Notice: $\frac{\partial}{\partial z}f\ne\frac{\partial}{\partial \mathfrak{R}(z)}f+i\frac{\partial}{\partial\mathfrak{I}(z)}f$. <br> * These statements are formal (形式上的) (compared to the true derivative) because one cannot truly vary $z=x+iy$ while keeping $z^\ast=x-iy$ constant, and vice versa. |
-| 8 | Procedure on Finding Complex Differentials | Consider a complex matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is $\begin{aligned}\boldsymbol{F}(&\boldsymbol{Z}_0+d\boldsymbol{Z}_0,\boldsymbol{Z}_1+d\boldsymbol{Z}_1)-\boldsymbol{F}(\boldsymbol{Z}_0,\boldsymbol{Z}_1)\\ &=\text{First-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1)+\text{Higher-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1).\end{aligned}$ The First-order( ) term depends on the first order of $d\boldsymbol{Z}_0$ or $d\boldsymbol{Z}_1$. The differential is then given by the *first-order term*. |
+| 8 | Procedure on Finding Complex Differentials | Consider a complex matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is </br> $\begin{aligned}\boldsymbol{F}(&\boldsymbol{Z}_0+d\boldsymbol{Z}_0,\boldsymbol{Z}_1+d\boldsymbol{Z}_1)-\boldsymbol{F}(\boldsymbol{Z}_0,\boldsymbol{Z}_1)\\ &=\text{First-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1)+\text{Higher-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1).\end{aligned}$ </br> The First-order( ) term depends on the first order of $d\boldsymbol{Z}_0$ or $d\boldsymbol{Z}_1$. The differential is then given by the *first-order term*. |
 | 9 | Derivative wrt. Complex Matrices (most general definition of the derivative) | $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$, the derivative of $\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ with respect to $\boldsymbol{Z}\in\mathbf{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$, and that with respect to $\boldsymbol{Z}^{\ast}\in\mathbb{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$. The size of both these derivatives is $MP\times NQ$. <br/> Then, $d\ \text{vec}(\boldsymbol{F})=(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})d\ \text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})d\ \text{vec}(\boldsymbol{Z}^\ast)$. <br/> The two derivatives are called the *Jacobian matrices* of $\boldsymbol{F}$ with respect to $\boldsymbol{Z}$ or $\boldsymbol{Z}^\ast$. <br/> (Note that the derivatives here have predefined forms. Sometimes the derivatives here are different from the common partial derivative expression. A summary of $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$ with scalar, vector, or matrix $\boldsymbol{Z}$ or $\boldsymbol{F}$ is given in Appendix.) |
 | 10 |Formal Derivatives of Vector Functions w.r.t. Vectors|$\boldsymbol{f}:\mathbb{C}^{N\times1}\times\mathbb{C}^{N\times1}\rightarrow\mathbb{C}^{M\times1}$. The derivatives of a *vector* function wrt. two *row vector* variables $\boldsymbol{z}^T$ and $\boldsymbol{z}^H$ are matrices sized as $M\times N$<br/>$\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}}f_0\\\\\vdots & &\vdots\\\\\frac{\partial}{\partial z_0}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}}f_{M-1}\end{bmatrix}$ <br/> and <br/> $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\\\ \vdots &&\vdots \\\\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$<br/> Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$. <br/>Use 10, the derivtives in 9 are <br/>$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\frac{\partial\text{vec}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast))}{\partial\text{vec}^T(\boldsymbol{Z})}$, <br/>$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\frac{\partial\text{vec}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast))}{\partial\text{vec}^T(\boldsymbol{Z}^\ast)}$.|
 | 11 | Formal Derivative of Matrix Functions w.r.t. Scalars |$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$. The derivative of $\boldsymbol{F}$ w.r.t. the scalar $z\in\mathbb{C}$ is <br/> $\frac{\partial\boldsymbol{F}}{\partial z}=\begin{bmatrix}\frac{\partial f_{0,0}}{\partial z} & \cdots & \frac{\partial f_{0,P-1}}{\partial z}\\\\\vdots&\ddots&\vdots\\\\\frac{\partial f_{M-1,0}}{\partial z}&\cdots&\frac{\partial f_{M-1,P-1}}{\partial z}\end{bmatrix}$, <br/> which has size $M\times P$.|
@@ -108,6 +108,8 @@ Check the definition of derivative with respect to a matrix. The following table
 |$\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{C}_0d\boldsymbol{z}+\boldsymbol{C}_1d\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_1$|$MP\times N$|
 |$\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{\zeta}_0d\boldsymbol{Z}+\boldsymbol{\zeta}_1d\boldsymbol{Z}^\ast$|$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_0$|$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_1$|$MP\times NQ$|
 
+**Note**: For $df(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{Tr}\{\mathbf{A}_0^Td\boldsymbol{Z}+d\boldsymbol{Z}^H\boldsymbol{A}_1\}$, the derivative w.r.t. $\boldsymbol{Z}^H$ is $\boldsymbol{A}_1$.
+
 # Some Theorems
 
 ## Chian Rules
@@ -124,9 +126,7 @@ The problems encountered by engineers are mostly related to scalar real-value fu
 | :--- | :--- | :--- | :--- |
 | 1 | **!!! Scalar Real-Valued Function**: 3 Equivalent Ways to Identify Stationary Point  | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. A stationary point of the function $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=g(\boldsymbol{X},\boldsymbol{Y})$, where $g:\mathbb{R}^{N\times Q}\times\mathbb{R}^{N\times Q}\rightarrow\mathbb{R}$ and $\boldsymbol{Z}=\boldsymbol{X}+i\boldsymbol{Y}$ is then found by one of the following three equivalent conditions: <br/> 1. $\mathcal{D}_{\boldsymbol{X}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}$ and $\mathcal{D}_{\boldsymbol{Y}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}$, <br/> 2. $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}$, <br/> 3. $\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}$. <br/> Note: They are all "long" *row vector*, since $df$ is a scalar! <br/> (A stationary point can be a local minimum, a local maximum, or a saddle point.) | (Hjorungnes 2011, Theorem 3.2) |
 | 2 | Scalar Real-Valued Function: Derivative | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$, then $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. <br/> This theorem leads to <br/> $df=2\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})\rbrace$. <br/> Note: With Definition 9, for $f\in\mathbb{R}$, we can write $df=(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\ \text{vec}(\boldsymbol{Z}^\ast)$. | (Hjorungnes 2011, Theorem 3.3) |
-| <a name='T4'>3<a> | Scalar Real-Valued Function: Descend Direction. | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. The directions where the function $f$ has the maximum and minimum rate of change with respect to $\text{vec}(\boldsymbol{Z})$ are given by $\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$ and $-\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$, respectively. <br/> **Note that it is w.r.t. $Z$ conjugate!** (Proof in [Proof of T4](#proof-of-t4)) | (Hjorungnes 2011, Theorem 3.4) |
-
-Example MIMO Channel
+| 3 | Scalar Real-Valued Function: Descend Direction. | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. The directions where the function $f$ has the maximum and minimum rate of change with respect to $\text{vec}(\boldsymbol{Z})$ are given by $\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$ and $-\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$, respectively. <br/> **Note that it is w.r.t. $Z$ conjugate!** <sup>[Proof-ddsrvf]</sup> | (Hjorungnes 2011, Theorem 3.4) |
 
 # Basic Complex Differential Properties
 
@@ -239,7 +239,7 @@ Note:
 
 |$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$\frac{\partial}{\partial\boldsymbol{Z}}f$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f$|
 |:---:|:---:|:---:|
-| $\text{Tr}\{\boldsymbol{Z}\}$ | $\boldsymbol{I}_N$ | $\boldsymbol{0}_{N\times N}$ |
+| $\text{Tr}\{\boldsymbol{Z}\}$ | $\boldsymbol{I}_N$ <sup>[Proof-dtm]</sup>| $\boldsymbol{0}_{N\times N}$ |
 | $\text{Tr}\{\boldsymbol{Z}^{*}\}$ | $\boldsymbol{0}_{N\times N}$| $\boldsymbol{I}_N$ |
 | $\text{Tr}\{\boldsymbol{AZ}\}$ | $\boldsymbol{A}^T$ | $\boldsymbol{0}_{N\times Q}$ |
 | $\text{Tr}\{\boldsymbol{ZA}_0\boldsymbol{Z}^T\boldsymbol{A}_1\}$ | $\boldsymbol{A}^T_1\boldsymbol{ZA}_0^T+\boldsymbol{A}_1\boldsymbol{ZA}_0$ | $\boldsymbol{0}_{N\times Q}$ |
@@ -260,9 +260,7 @@ Note:
 
 # Appendix: Proof
 
-## Proof of T4
-
-[back](#T4)
+## Proof-ddsrvf: Descend Direction of Scalar Real-Valued Function
 
 First of all, we prove $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
 
@@ -309,15 +307,24 @@ It is worth to note that the inner product for complex vectors works only for He
 
 $$<\boldsymbol{a},\boldsymbol{b}>=\boldsymbol{a}^H\boldsymbol{b}\neq\boldsymbol{a}^T\boldsymbol{b}.$$
 
+## Proof-dtm: Derivative of Trace with Respect to Matrix Variables
+
+The partial derivative of function $f(\boldsymbol{Z},\boldsymbol{Z}^*)=\text{Tr}(\boldsymbol{Z})$ is
+
+$$\begin{align*}
+  \frac{\partial}{\partial\boldsymbol{Z}}f&=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^T\frac{\text{Tr}(\boldsymbol{Z})}{\partial [\boldsymbol{Z}]_{k,l}}=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^T\text{Tr}(e_ke_l^T)\\
+  &=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^Te_le_k^T=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_k^T=\boldsymbol{I}_n.
+\end{align*}$$
+
 # Appendix: Example
 
-## Example: Derivate of Scalar Real-Valued Function Related to MIMO Channel
+## Example: Derivate of Scalar Real-Valued Function Related to MIMO Channel (Containing Chain Rule)
 
 Consider a MIMO system with $N_t$ transmit antennas and $N_r$ receive antennas. $\boldsymbol{H}\in\mathbb{C}^{N_r\times N_t}$ denotes the static MIMO channel. With white zero-mean complex circularly symmetric Gaussian additive noise $\boldsymbol{n}\in\mathbb{C}^{N_r\times1}$, i.e. $\mathbb{E}[\boldsymbol{n}\boldsymbol{n}^H]=\boldsymbol{I}_{N_r}$, the relation between channel output signal $\boldsymbol{y}\in\mathbb{C}^{N_r\times 1}$ and the transmit signal $\boldsymbol{x}\in\mathbb{C}^{N_t\times1}$ is
 
 $$\boldsymbol{y=Hx+n}.$$
 
-The capacity of this MIMO channel was derived in (Telatar 1995) as
+The capacity of this MIMO channel was derived in (Telatar 1999) as
 
 $$C=\ln\left(\det\left(I_{N_r}+\boldsymbol{HQH}^H\right)\right),$$
 
@@ -342,9 +349,13 @@ $$\nabla_{\boldsymbol{H}} C=\frac{\partial}{\partial\boldsymbol{H}^*}C=\left(\bo
 
 There are another equivalent expressions of $\nabla_{\boldsymbol{H}}C$. For example, according to the Sylvester's determinant identity, the capacity can be rewritten as
 
-$$C=\ln\left(\det\left(\boldsymbol{I}_{N_r}+\boldsymbol{H}^H\boldsymbol{HQ}\right)\right)$$, resulting in the gradient
+$$C=\ln\left(\det\left(\boldsymbol{I}_{N_r}+\boldsymbol{H}^H\boldsymbol{HQ}\right)\right),$$
+
+resulting in the gradient
 
 $$\nabla_{\boldsymbol{H}}C=\frac{\partial}{\partial\boldsymbol{H}^\ast}f=\boldsymbol{HQ}\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}.$$
 
 # References
 
+- Hjørungnes, A. (2011). *Complex-valued matrix derivatives: With applications in Signal Processing and Communications*. Cambridge University Press.
+- Telatar, E. (1999). Capacity of Multi-antenna Gaussian Channels. *European Transactions on Telecommunications, 10*(6), pp. 585-595. https://doi.org/10.1002/ett.4460100604

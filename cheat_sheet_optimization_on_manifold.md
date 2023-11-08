@@ -14,7 +14,7 @@
 
   If $M$ is a linear (sub)space, we also call it a *linear manifold*.
 
-  **Example - Unit Sphere:** $\mathbb{S}^{d}=\mathbb{S}^{n-1}=\lbrace x\in\mathbb{R}^n\ \vert\ x^Tx-1\rbrace $. The local defining function is $h(x)=x^Tx-1$. The differential at direction $v$ is $\mathrm{D}h(x)[v]=\lim_{t\rightarrow0}\frac{(x+tv)^T(x+tv)-1-x^Tx+1}{t}=\lim_{t\rightarrow0}\frac{x^Tx+tx^Tv+tv^Tx+t^2v^Tv-x^Tx}{t}=2v^Tx$. Therefore, the differential is $\mathrm{D}h(x)=2x$.
+  **Example - Unit Sphere:** $\mathbb{S}^{d}=\mathbb{S}^{n-1}=\lbrace x\in\mathbb{R}^n\ \vert\ x^Tx-1\rbrace$. The local defining function is $h(x)=x^Tx-1$. The differential at direction $v$ is $\mathrm{D}h(x)[v]=\lim_{t\rightarrow0}\frac{(x+tv)^T(x+tv)-1-x^Tx+1}{t}=\lim_{t\rightarrow0}\frac{x^Tx+tx^Tv+tv^Tx+t^2v^Tv-x^Tx}{t}=2v^Tx$. Therefore, the differential is $\mathrm{D}h(x)=2x$.
 
 - (**Diffeomorphism** [Def. 3.11]) A *diffeomorphism* is a bijective map $F:U\rightarrow V$, where $U,V$ are open sets and such that both $F$ and $F^{-1}$ are smooth.
 
@@ -58,9 +58,9 @@
 
     **Note**: (a) Linear space is also a manifold. Therefore, in some aspect a mapping between linear spaces can be viewed as a special case of a mapping between manifolds. (b) Applying the definition of mapping between linear spaces to a mapping between manifolds can be problematic, because the $x+tv$ generally does not belong to $\mathcal{M}$. (c) Relying on Def. 3.14, $t\mapsto x+tv$ is nothing but a curve in $\mathcal{E}$ which passes through $x$ with velocity $v$. (d) Relying on Def. 3.30, we can smoothly extend $F$ and differentiate the extension instead.
 
-    ![smooth-mapping-between-manifolds](image/smooth_mapping_between_manifolds.png)
+  ![smooth-mapping-between-manifolds](image/smooth_mapping_between_manifolds.png)
 
-    (*Figure 3.3* A smooth map $F:\mathcal{M}\rightarrow\mathcal{M}^\prime$ pushes curves $c$ on $\mathcal{M}$ to smooth curves $F\circ c$ on $\mathcal{M}^\prime$)
+  (*Figure 3.3* A smooth map $F:\mathcal{M}\rightarrow\mathcal{M}^\prime$ pushes curves $c$ on $\mathcal{M}$ to smooth curves $F\circ c$ on $\mathcal{M}^\prime$)
 
   - For smooth maps $F_1,F_2:\mathcal{M}\rightarrow\mathcal{E}^\prime$ and real numbers $a_1,a_2$, then $F:x\mapsto a_1F_1(x)+a_2F_2{x}$ is smooth and we have linearity $\mathrm{D}F(x)=a_1\mathrm{D}F_1(x)+a_2\mathrm{D}F_2{x}$.
 
@@ -72,9 +72,9 @@
 
   **3 Ways to Compute Riemannian Gradient**:
 
-   1. (**From the definition**)
-   2. (**Through a retraction** [Prop. 3.59]) Let $f:\mathcal{M}\rightarrow\mathbb{R}$ be a smooth function on a Riemannian manifold $\mathcal{M}$ equipped with a retraction $\mathrm{R}$. Then, for all $x\in\mathcal{M}$, $\mathrm{grad}f(x)=\mathrm{grad}(f\circ\mathrm{R}_x)(0)$, where $f\circ\mathrm{R}_x:\mathrm{T}_x\mathcal{M}\rightarrow\mathbb{R}$ is defined on a Euclidean space (the linear space $\mathrm{T}_x\mathcal{M}$ with inner product $\langle\cdot,\cdot\rangle_x$), hence its gradient is a "classical gradient".
-   3. (**Via a smooth extension** (especially good for Riemannian submanifolds)) (1) Obtain a smooth extension of $f:U\rightarrow\mathbb{R}$, denoted as $\bar{f}$. (b) Compute $\mathrm{grad}\bar{f}(x)$. Note that $\mathrm{grad}\bar{f}(x)$ is in $\mathcal{E}$ instead of $\mathrm{T}_x\mathcal{M}$. (c) Project $\mathrm{grad}\bar{f}(x)$ back on the tangent space $\mathrm{T}_x\mathcal{M}$, leading to $\mathrm{grad}f(x)$.
+  1. (**From the definition**)
+  2. (**Through a retraction** [Prop. 3.59]) Let $f:\mathcal{M}\rightarrow\mathbb{R}$ be a smooth function on a Riemannian manifold $\mathcal{M}$ equipped with a retraction $\mathrm{R}$. Then, for all $x\in\mathcal{M}$, $\mathrm{grad}f(x)=\mathrm{grad}(f\circ\mathrm{R}_x)(0)$, where $f\circ\mathrm{R}_x:\mathrm{T}_x\mathcal{M}\rightarrow\mathbb{R}$ is defined on a Euclidean space (the linear space $\mathrm{T}_x\mathcal{M}$ with inner product $\langle\cdot,\cdot\rangle_x$), hence its gradient is a "classical gradient".
+  3. (**Via a smooth extension** (especially good for Riemannian submanifolds)) (1) Obtain a smooth extension of $f:U\rightarrow\mathbb{R}$, denoted as $\bar{f}$. (b) Compute $\mathrm{grad}\bar{f}(x)$. Note that $\mathrm{grad}\bar{f}(x)$ is in $\mathcal{E}$ instead of $\mathrm{T}_x\mathcal{M}$. (c) Project $\mathrm{grad}\bar{f}(x)$ back on the tangent space $\mathrm{T}_x\mathcal{M}$, leading to $\mathrm{grad}f(x)$.
 
 - (**Orthogonal Projector** [Def. 3.60]) Let $\mathcal{M}$ be an embedded submanifold of a Euclidean space $\mathcal{E}$ equipped with a Euclidean metric $\langle\cdot,\cdot\rangle$. The *orthogonal projector* to $\mathrm{T}_x\mathcal{M}$ is the linear map $\mathrm{Proj}_x:\mathcal{E}\rightarrow\mathcal{E}$ characterized by the following properties:
 
@@ -83,3 +83,15 @@
   3. Orthogonal: $\langle u-\mathrm{Proj}_x(u),v\rangle=0$ for all $v\in\mathrm{T}_x\mathcal{M}$ and $u\in\mathcal{E}$.
 
   **Example - Orthogonal Projector for Unit Sphere**: We know the tangent space $`\mathrm{T}_x\mathbb{S}^{n-1}=\lbrace v\ \vert\ v^Tx=0\rbrace`$. Since the tangent space is a subspace of vector space $\mathcal{E}$, any vector $u\in\mathcal{E}$ can be decomposed into two parts - one is on the tangent space and the other is orthogonal to the tangent space, i.e. $`u=u_{\Vert}+u_{\perp}`$, where $`\mathrm{Proj}_x(u)=u_{\Vert}`$ is the orthogonal projection onto $`\mathrm{T}_x\mathbb{S}^{n-1}`$. Note that $x$ is also orthogonal to the tangent space. It shows the fact that $u_{\perp}$ is parallel to $x$. As a result, we need only project $u$ on $x$ and then subtract it from $u$ itself, the remaining part is $u_{\Vert}$, the orthogonal projection of $u$ on the tangent space. We know that $u_{\perp}=\frac{u^Tx}{x^Tx}x=u^Txx$, since $x\in\mathbb{S}^{n-1}$, i.e., $x^Tx=1$. Eventually, we obtain $\mathrm{Proj}_x(u)=u-u^Txx=u-xx^Tu=(I-xx^T)u$, resulting in the orthogonal projector for the unit sphere $\mathrm{Proj}_x=I-xx^T$.
+
+- (**Limit, Accumulation Point** [Def. 4.1]) Consider a sequence $S$ of points $x_0,x_1,x_2,\cdots$ on a manifold $\mathcal{M}$. Then,
+  1. A point $x\in\mathcal{M}$ is a *limit* of $S$ if, for every neighborhood $\mathcal{U}$ of $x$ in $\mathcal{M}$, there exists an integer $K$ such that $x_K,x_{K+1},x_{K+2},\cdots$ are in $\mathcal{U}$. The topology of a manifold is *Hausdorff*, hence a sequence has at most one limit. If $x$ is the limit, we write $\lim_{k\rightarrow\infty}=x$ or $x_k\rightarrow x$ and we say the sequence converges to $x$.
+  2. A point $x\in\mathcal{M}$ is an *accumulation* point of $S$ if it is the limit of a subsequence of $S$, that is, if every neighborhood $\mathcal{U}$ of $x$ in $\mathcal{M}$ contains an infinite number of elements of $S$.
+
+- (**Assumptions that Lead to Favorable Behavior**)
+  1. (**A 4.1**) There exists $f_{\mathrm{low}}\in\mathbb{R}$ such that $f(x)\geq f_{\mathrm{low}}$ for all $x\in\mathcal{M}$.
+  2. 
+- (**Critical (Stationary) Points** [Def. 4.4]) A point $x\in\mathcal{M}$ is *critical* (or *stationary*) for a smooth function $f:\mathcal{M}\rightarrow\mathbb{R}$ if $(f\circ c)^\prime(0)\geq0$ for all smooth curves $c$ on $\mathcal{M}$ such that $c(0)=x$.
+
+  - (Prop. 4.5) Any local minimizer of a smooth function $f:\mathcal{M}\rightarrow\mathbb{R}$ is a critical point of $f$.
+  - (Prop. 4.6) Let $f:\mathcal{M}\rightarrow\mathbb{R}$ be smooth on a Riemannian manifold $\mathcal{M}$. Then , $x$ is a critical point of $f$ if and only if $\mathrm{grad}f(x)=0$.

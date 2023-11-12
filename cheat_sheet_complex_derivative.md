@@ -23,7 +23,7 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 
 $\mathbb{R}$ and $\mathbb{C}$ denote respectively the real number and complex number set. $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ means that the matrix $A$ contains complex numbers and has size $N\times Q$.
 
-$i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers typically use $j$ instead of $i$. Here we follow the mathematical custom by using $i$ as imaginary unit. $d$ represents derivative. $\partial$ is the partial derivative. $(\cdot)^*$ is the conjugate of a complex number, vector or matrix. $(\cdot)^T$ and $(\cdots)^H$ return transpose and Hermitian (conjugate transpose) respectively. $(\boldsymbol{A})^{-1}$ is the inverse matrix of a square matrix $\boldsymbol{A}$, i.e. $\boldsymbol{AA}^{-1}=\boldsymbol{A}^{-1}\boldsymbol{A}=\boldsymbol{I}$. $\text{Tr}\{\boldsymbol{A}\}$ and $\det(\boldsymbol{A})$ return the trace and the determinant of a square matrix $\boldsymbol{A}$. The adjoint of a matrix $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ is denoted by $\text{adj}(\boldsymbol{A})$, i.e. $\text{adj}(\boldsymbol{A})=\det(\boldsymbol{A})\boldsymbol{A}^{-1}$.
+$i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers typically use $j$ instead of $i$. Here we follow the mathematical custom by using $i$ as imaginary unit. $d$ represents derivative. $\partial$ is the partial derivative. $(\cdot)^\ast$ is the conjugate of a complex number, vector or matrix. $(\cdot)^T$ and $(\cdots)^H$ return transpose and Hermitian (conjugate transpose) respectively. $(\boldsymbol{A})^{-1}$ is the inverse matrix of a square matrix $\boldsymbol{A}$, i.e. $\boldsymbol{AA}^{-1}=\boldsymbol{A}^{-1}\boldsymbol{A}=\boldsymbol{I}$. $\text{Tr}\{\boldsymbol{A}\}$ and $\det(\boldsymbol{A})$ return the trace and the determinant of a square matrix $\boldsymbol{A}$. The adjoint of a matrix $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ is denoted by $\text{adj}(\boldsymbol{A})$, i.e. $\text{adj}(\boldsymbol{A})=\det(\boldsymbol{A})\boldsymbol{A}^{-1}$.
 
 ## Basic Properties of Linear Algebra
 
@@ -138,7 +138,7 @@ and
 
 $$\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$$
 
-Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$.
+Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{f}$.
 
 ## D10: Formal Derivative of Matrix Functions w.r.t. Scalar Variables
 
@@ -162,7 +162,7 @@ If $f$ is a real-valued function of a complex-valued matrix $Z$, then the comple
 
 |Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
 |:---:|:---:|:---:|:---:|:---:|
-|$f(z,z^\ast)$|$df=a_0dz+a_1dz^*$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
+|$f(z,z^\ast)$|$df=a_0dz+a_1dz^\ast$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
 |$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$df=\boldsymbol{a}_0d\boldsymbol{z}+\boldsymbol{a}_1\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_1$|$1\times N$|
 |$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{vec}^T(\boldsymbol{A}_0)d\ \text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\ \text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_0)$|$\mathcal{D}_{\boldsymbol{Z}^\ast}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_1)$|$1\times NQ$|
 |$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{Tr}\{\mathbf{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\}$|$\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_0$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_1$|$N\times Q$|
@@ -230,15 +230,13 @@ Take the matrix form $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$ as example.
 
 # Advanced Complex Differential
 
-# Complex-Valued Derivatives of Scalar Real-Value Functions
+# Complex-Valued Derivatives of A Scalar Function
 
-The function $f:C^{N\times Q}\rightarrow\mathbb{R}$.
+Practically the problems we encounter in the real world are related to a scalar function $f:C^{N\times Q}\rightarrow\mathbb{C}$. Most of the time the scalar function returns even a real-value scalar, with which we can order, compare, and therefore we can define minimum or maximum.
 
-## Derivatives of $f(z,z^\ast)$ w.r.t. Scalar Variable
+## Derivatives of Scalar Function of Scalar Variables $f(z,z^\ast)$
 
-## Drivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$ w.r.t. Vector Variable
-
-Let $f:\mathbb{C}^{n}\rightarrow\mathbb{R}$.
+## Derivatives of Scalar Function of Vector Variables $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
 
 **Table 3**: Derivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$*
 
@@ -250,7 +248,7 @@ Let $f:\mathbb{C}^{n}\rightarrow\mathbb{R}$.
 |$\boldsymbol{z}^H\boldsymbol{Az}$|$\boldsymbol{z}^H\boldsymbol{A}d\boldsymbol{z}+\boldsymbol{z}^T\boldsymbol{A}^Td\boldsymbol{z}$|$\boldsymbol{z}^H\boldsymbol{A}$|$\boldsymbol{z}^T\boldsymbol{A}^T$|
 |$\boldsymbol{z}^T\boldsymbol{Az}^{\ast}$|$\boldsymbol{z}^H\left(\boldsymbol{A}+\boldsymbol{A}^T\right)d\boldsymbol{z}^{\ast}$|$\boldsymbol{0}_{1\times N}$|$\boldsymbol{z}^H\left(\boldsymbol{A}+\boldsymbol{A}^T\right)$|
 
-## Complex-Valued Derivatives of $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$
+## Derivatives of Scalar Function of Matrix Variables $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$
 
 ### Method 1: Use Official Definition of Formal Derivatives
 
@@ -260,7 +258,7 @@ where $\boldsymbol{A}_0,\boldsymbol{A}_1,\boldsymbol{Z}\in\mathbb{C}^{N\times Q}
 
 ### Method 2: An Alternative Expression
 
-For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
+For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
 
 $$\begin{aligned}\frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}\frac{\partial}{\partial z_{0,0}}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}}f \\ \vdots & \ddots & \vdots \\ \frac{\partial}{\partial z_{N-1,0}}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}}f \\ \end{bmatrix}, \\ \frac{\partial}{\partial\boldsymbol{Z}^\ast}f=&\begin{bmatrix}\frac{\partial}{\partial z_{0,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}^\ast}f \\ \vdots & \ddots & \vdots \\ \frac{\partial}{\partial z_{N-1,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}^\ast}f \\ \end{bmatrix}.\end{aligned}$$
 
@@ -286,7 +284,7 @@ $$\begin{align*}\frac{\partial}{\partial\boldsymbol{Z}}f&=\boldsymbol{A}_0\\\fra
 
 by the connection
 
-$$\begin{align*}\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\end{align*}$$
+$$\begin{align*}\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\end{align*}$$
 
 **Table 4**: Derivatives of $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$.
 
@@ -347,7 +345,7 @@ $$<\boldsymbol{a},\boldsymbol{b}>=\boldsymbol{a}^H\boldsymbol{b}\neq\boldsymbol{
 
 ## Proof-dtm: Derivative of Trace with Respect to Matrix Variables
 
-The partial derivative of function $f(\boldsymbol{Z},\boldsymbol{Z}^*)=\text{Tr}(\boldsymbol{Z})$ is
+The partial derivative of function $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{Tr}(\boldsymbol{Z})$ is
 
 $$\begin{align*}\frac{\partial}{\partial\boldsymbol{Z}}f&=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^T\frac{\text{Tr}(\boldsymbol{Z})}{\partial [\boldsymbol{Z}]_{k,l}}=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^T\text{Tr}(e_ke_l^T)\\&=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_l^Te_le_k^T=\sum_{k=1}^{n}\sum_{l=1}^{n}e_ke_k^T=\boldsymbol{I}_n.\end{align*}$$
 
@@ -373,7 +371,7 @@ Let's explain the derivation above first. (a) is based on $d\ \ln\det(\boldsymbo
 
 Note that for a scalar real-valued function, the gradient is defined as the partial derivative with respect to the conjugate (Hjorungnes 2011, Eq. (4.48))
 
-$$\nabla_{\boldsymbol{H}} C=\frac{\partial}{\partial\boldsymbol{H}^*}C=\left(\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\right)^T=\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}.$$
+$$\nabla_{\boldsymbol{H}} C=\frac{\partial}{\partial\boldsymbol{H}^\ast}C=\left(\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\right)^T=\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}.$$
 
 There are another equivalent expressions of $\nabla_{\boldsymbol{H}}C$. For example, according to the Sylvester's determinant identity, the capacity can be rewritten as
 
@@ -381,7 +379,7 @@ $$C=\ln\left(\det\left(\boldsymbol{I}_{N_r}+\boldsymbol{H}^H\boldsymbol{HQ}\righ
 
 resulting in the gradient
 
-$$\nabla_{\boldsymbol{H}}C=\frac{\partial}{\partial\boldsymbol{H}^\ast}f=\boldsymbol{HQ}\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}.$$
+$$\nabla_{\boldsymbol{H}} C=\frac{\partial}{\partial\boldsymbol{H}^\ast}C=\boldsymbol{HQ}\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}.$$
 
 # References
 

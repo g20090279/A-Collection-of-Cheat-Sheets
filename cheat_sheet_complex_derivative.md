@@ -1,5 +1,5 @@
 - Topic: Cheat Sheet of Complex Derivative
-- Last revised: Nov. 11, 2023
+- Last revised: Nov. 12, 2023
 
 ---
 
@@ -13,7 +13,7 @@ The significant difference of the complex derivative of a complex analytic funct
 
 # Symbols and Variables
 
-## Variables and Their Size
+## Variables and Their Sizes
 
 The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for vector and $\boldsymbol{Z}$ for matrix. Same rules for other letters). Letter like $a$ or $b$ represent constant. Function is denoted by $f$.
 
@@ -71,69 +71,94 @@ Let $\boldsymbol{A}$ be an $n\times n$ matrix.
 
 # Some Definitions
 
-1. **Complex-Valued Scalar**: $z=x+iy\in\mathbb{C}$, where the *real part* is $\mathfrak{R}(z)$ and the *imaginary part* is $\mathfrak{I}(z)=y$.
-2. **Real Part** of A Complex-Valued Scalar: $\mathfrak{R}(z)=x=\frac{z+z^\ast}{2}$
-3. **Imaginary Part** of A Complex-Valued Scalar: Part $\mathfrak{I}(z)=y=\frac{z-z^\ast}{2i}$
-4. **Complex Differentials**: Take complex scalar as an example. 
+## D01: Complex-Valued Scalar
 
-   $$dz=dx+idy,\quad dz^\ast=dx-idy$$
+$z=x+iy\in\mathbb{C}$, where the *real part* is $\mathfrak{R}(z)$ and the *imaginary part* is $\mathfrak{I}(z)=y$. The real part of a complex-valued scalar is $\mathfrak{R}(z)=x=\frac{z+z^\ast}{2}$, while the imaginary part is $\mathfrak{I}(z)=y=\frac{z-z^\ast}{2i}$.
 
-   From above, we have $dx=\frac{dz+dz^\ast}{2}$, $dy=\frac{dz-dz^\ast}{2i}$, $dz^\ast=(dz)^\ast$. 
-5. **Analytic Function (asa. Complex Differentiable, Holomorphic, Regular)**: The function $f$ is an *analytic* function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where the domain $\mathcal{D}$ is a subset of $\mathbb{C}$.
+## D02: Complex Differentials
 
-   Analytic function examples: $z^n$, $e^z$, $\ln(z)$, $\sin(z)$, $\cos(z)$. Non-analytic function examples: $z^\ast$, $\mathfrak{R}(z)$, $\mathfrak{I}(z)$, any nonconstant purely real-valued function such as $\|z\|$.
-6. **Cauchy-Riemann Equations**: Take a complex scalar as an example. If $f=u(x,y)+iv(x,y)$ is complex-differentiable (analytic) at $z=x+iy$, then by approaching from real and imaginary axes, we have equations
+Take complex scalar as an example. The complex differential and the corresponding complex conjugate differential are $dz=dx+idy,dz^\ast=dx-idy$. From above, we have $dx=\frac{dz+dz^\ast}{2}$, $dy=\frac{dz-dz^\ast}{2i}$, $dz^\ast=(dz)^\ast$. 
 
-   $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
+## D03: Analytic Function (asa. Complex Differentiable, Holomorphic, Regular)
 
-   Additionally, $\frac{\partial}{\partial z^\ast}f=0$ for formal derivative implies that $f$ is holomorphic, since it is equivalent to the Cauchy-Riemann Equations.  
-7. **True Derivative**: $df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$
+The function $f$ is an *analytic* function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where the domain $\mathcal{D}$ is a subset of $\mathbb{C}$.
 
-   Note: This is the basic assumption: real part and imaginary part are independent.
+**Analytic function examples**: $z^n$, $e^z$, $\ln(z)$, $\sin(z)$, $\cos(z)$. Non-analytic function examples: $z^\ast$, $\mathfrak{R}(z)$, $\mathfrak{I}(z)$, any nonconstant purely real-valued function such as $\|z\|$.
 
-8. **Formal Derivative** (asa. **Wirtinger Derivative**, $\mathbb{CR}$-**Derivative**: Let $z=x+iy$, where $x,y\in\mathbb{R}$. From Definition 2, 3 and 6, the Formal Derivative is defined as
+## D04: Cauchy-Riemann Equations
 
-   $$\frac{\partial}{\partial z}f\vert_{z^\ast=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right),\quad\frac{\partial}{\partial z^\ast}f\vert_{z=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right).$$
-   
-   The variables $z$ and $z^\ast$ are assumed to be independent.
+Take a complex scalar as an example. If $f=u(x,y)+iv(x,y)$ is complex-differentiable (analytic) at $z=x+iy$, then by approaching from real and imaginary axes, we have equations
 
-   **Note 1**: $\frac{\partial}{\partial z}f\ne\frac{\partial}{\partial \mathfrak{R}(z)}f+i\frac{\partial}{\partial\mathfrak{I}(z)}f$.
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
 
-   **Note 2**: These statements are formal (compared to the true derivative) because one cannot truly vary $z=x+iy$ while keeping $z^\ast=x-iy$ constant, and vice versa.
+Additionally, $\frac{\partial}{\partial z^\ast}f=0$ for formal derivative implies that $f$ is holomorphic, since it is equivalent to the Cauchy-Riemann Equations.  
 
-   **Note 3**: If $\partial f/\partial z^\ast=0$, $f$ is an analytic function.
+## D05: True Derivative
 
-9. **Differential of A Function**: Consider a complex-valued matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is
+Based on the assumption that real part and imaginary part are independent:
 
-   $$\boldsymbol{F}(\boldsymbol{Z}_0+d\boldsymbol{Z}_0,\boldsymbol{Z}_1+d\boldsymbol{Z}_1)-\boldsymbol{F}(\boldsymbol{Z}_0,\boldsymbol{Z}_1)=\text{First-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1)+\text{Higher-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1).$$
+$$df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy.$$
 
-   The $\mathrm{First-order}(\cdot)$ term depends on the first order of $d\boldsymbol{Z}_0$ or $d\boldsymbol{Z}_1$. The differential is then given by the *first-order term*.
-10. **Derivative of Matrix Function wrt. Matrices**: $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$, the derivative of $\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ with respect to $\boldsymbol{Z}\in\mathbf{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$, and that with respect to $\boldsymbol{Z}^{\ast}\in\mathbb{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$. The size of both these derivatives is $MP\times NQ$.
+## D06: Formal Derivative (a.s.a. Wirtinger Derivative, $\mathbb{CR}$-Derivative)
 
-   ```math
-   d\mathrm{vec}(\boldsymbol{F})=(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})d\mathrm{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})d\mathrm{vec}(\boldsymbol{Z}^\ast).
-   ```
+Let $z=x+iy$, where $x,y\in\mathbb{R}$. From Definition 2, 3 and 6, the Formal Derivative is defined as
 
-   The two derivatives are called the *Jacobian matrices* of $\boldsymbol{F}$ with respect to $\boldsymbol{Z}$ or $\boldsymbol{Z}^\ast$. (Note that the derivatives here have predefined forms. Sometimes the derivatives here are different from the common partial derivative expression. A summary of $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$ with scalar, vector, or matrix $\boldsymbol{Z}$ or $\boldsymbol{F}$ is given in *Table 2*.)
-11. **Formal Derivatives of Vector Functions w.r.t. Vector Variables**: Let $\boldsymbol{f}:\mathbb{C}^{N\times1}\times\mathbb{C}^{N\times1}\rightarrow\mathbb{C}^{M\times1}$. The derivatives of a vector function w.r.t. two *row-vector* variables $\boldsymbol{z}^T$ or $\boldsymbol{z}^H$ are matrices sized as $M\times N$
+$$\frac{\partial}{\partial z}f\vert_{z^\ast=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right),\quad\frac{\partial}{\partial z^\ast}f\vert_{z=\text{const}}=\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right).$$
+ 
+The variables $z$ and $z^\ast$ are assumed to be independent.
 
-   $$\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}}f_0\\\\\vdots & &\vdots\\\\\frac{\partial}{\partial z_0}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}}f_{M-1}\end{bmatrix}$$
+**Note 1**: $\frac{\partial}{\partial z}f\ne\frac{\partial}{\partial \mathfrak{R}(z)}f+i\frac{\partial}{\partial\mathfrak{I}(z)}f$.
+
+**Note 2**: These statements are formal (compared to the true derivative) because one cannot truly vary $z=x+iy$ while keeping $z^\ast=x-iy$ constant, and vice versa.
+
+**Note 3**: If $\partial f/\partial z^\ast=0$, $f$ is an analytic function.
+
+## D07: Differential of A Function
+Consider a complex-valued matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is
+
+$$\boldsymbol{F}(\boldsymbol{Z}_0+d\boldsymbol{Z}_0,\boldsymbol{Z}_1+d\boldsymbol{Z}_1)-\boldsymbol{F}(\boldsymbol{Z}_0,\boldsymbol{Z}_1)=\text{First-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1)+\text{Higher-order}(d\boldsymbol{Z}_0,d\boldsymbol{Z}_1).$$
+
+The $\text{First-order}(\cdot)$ term depends on the first order of $d\boldsymbol{Z}_0$ or $d\boldsymbol{Z}_1$. The differential is then given by the *first-order term*.
+
+## D08: Derivative of A Matrix Function of Matrices
+
+$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$, the derivative of $\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ with respect to $\boldsymbol{Z}\in\mathbf{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$, and that with respect to $\boldsymbol{Z}^{\ast}\in\mathbb{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$. The size of both these derivatives is $MP\times NQ$.
+
+$$d\mathrm{vec}(\boldsymbol{F})=(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})d\mathrm{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})d\mathrm{vec}(\boldsymbol{Z}^\ast).$$
+
+The two derivatives are called the *Jacobian matrices* of $\boldsymbol{F}$ with respect to $\boldsymbol{Z}$ or $\boldsymbol{Z}^\ast$. (Note that the derivatives here have predefined forms. Sometimes the derivatives here are different from the common partial derivative expression. A summary of $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$ with scalar, vector, or matrix $\boldsymbol{Z}$ or $\boldsymbol{F}$ is given in *Table 2*.)
+
+## D09: Formal Derivatives of A Vector Function w.r.t. Vector Variables
+
+Let $\boldsymbol{f}:\mathbb{C}^{N\times1}\times\mathbb{C}^{N\times1}\rightarrow\mathbb{C}^{M\times1}$. The derivatives of a vector function w.r.t. two *row-vector* variables $\boldsymbol{z}^T$ or $\boldsymbol{z}^H$ are matrices sized as $M\times N$
+
+$$\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}}f_0 \\ \vdots & &\vdots \\ \frac{\partial}{\partial z_0}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}}f_{M-1}\end{bmatrix}$$
+
 and
 
-   $$\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\\\ \vdots &&\vdots \\\\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$$
+$$\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$$
 
-   Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$.
+Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$.
 
-   Use Definition 11, the derivtives in 10 are $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\partial\text{vec}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast))/\partial\text{vec}^T(\boldsymbol{Z})$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\partial\text{vec}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast))/\partial\text{vec}^T(\boldsymbol{Z}^\ast)$.
-12. **Formal Derivative of Matrix Functions w.r.t. Scalar Variables**: $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$. The derivative of $\boldsymbol{F}$ w.r.t. the scalar $z\in\mathbb{C}$ is
+## D10: Formal Derivative of Matrix Functions w.r.t. Scalar Variables
 
-   $$\frac{\partial\boldsymbol{F}}{\partial z}=\begin{bmatrix}\frac{\partial f_{0,0}}{\partial z} & \cdots & \frac{\partial f_{0,P-1}}{\partial z}\\\vdots&\ddots&\vdots\\\frac{\partial f_{M-1,0}}{\partial z}&\cdots&\frac{\partial f_{M-1,P-1}}{\partial z}\end{bmatrix},$$
+$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$. The derivative of $\boldsymbol{F}$ w.r.t. the scalar $z\in\mathbb{C}$ is
 
-   which has size $M\times P$.
-13. **Complex Gradient Vector**: If $f$ is a real-valued function* of a complex-valued vector $\boldsymbol{z}$, then the complex gradient vector is given by $\nabla f(\boldsymbol{z})=2\frac{df(\boldsymbol{z})}{d\boldsymbol{z}^\ast}=\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{R}(\boldsymbol{z})}+i\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{I}(\boldsymbol{z})}$. Note that a real-valued function is not holomorphic.
-14. **Complex Gradient Matrix**: If $f$ is a real-valued function of a complex-valued matrix $Z$, then the complex gradient matrix is given by $\nabla f(\boldsymbol{Z})=2\frac{df(\boldsymbol{Z})}{d\boldsymbol{Z}^\ast}=\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{R}(\boldsymbol{Z})}+i\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{I}(\boldsymbol{Z})}$.
+$$\frac{\partial\boldsymbol{F}}{\partial z}=\begin{bmatrix}\frac{\partial f_{0,0}}{\partial z} & \cdots & \frac{\partial f_{0,P-1}}{\partial z} \\ \vdots & \ddots & \vdots \\ \frac{\partial f_{M-1,0}}{\partial z} & \cdots & \frac{\partial f_{M-1,P-1}}{\partial z}\end{bmatrix},$$
 
-**Table 2:** Identification table with different dimensions of function and variables. The table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
+which has size $M\times P$.
+
+## D11: Complex Gradient Vector
+
+If $f$ is a real-valued function of a complex-valued vector $\boldsymbol{z}$, then the complex gradient vector is given by $\nabla f(\boldsymbol{z})=2\frac{df(\boldsymbol{z})}{d\boldsymbol{z}^\ast}=\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{R}(\boldsymbol{z})}+i\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{I}(\boldsymbol{z})}$. Note that a real-valued function is not holomorphic.
+
+## D12: Complex Gradient Matrix
+
+If $f$ is a real-valued function of a complex-valued matrix $Z$, then the complex gradient matrix is given by $\nabla f(\boldsymbol{Z})=2\frac{df(\boldsymbol{Z})}{d\boldsymbol{Z}^\ast}=\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{R}(\boldsymbol{Z})}+i\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{I}(\boldsymbol{Z})}$.
+
+---
+
+**Table 2**: Identification table with different dimensions of function and variables. The table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
 
 |Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
 |:---:|:---:|:---:|:---:|:---:|
@@ -152,7 +177,7 @@ and
 
 # Some Theorems
 
-## Chain Rules
+## T01: Chain Rules
 
 Let $(\mathcal{S}_0,\mathcal{S}_1)\subseteq\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}$ and $\boldsymbol{F}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{M\times P}$ be differentiable. Define the differentiable composite function $\boldsymbol{H}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{R\times S}$ by
 
@@ -166,15 +191,23 @@ $$\begin{align*}\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{H}&=(\mathcal{D}_{\bolds
 
 The problems encountered by engineers are mostly related to scalar real-valued functions, with which we can compare the magnitude, order, and hence find the maximum or minimum.
 
-1. **3 Equivalent Ways to Identify Stationary Point** (Hjorungnes 2011, Theorem 3.2): $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. A stationary point of the function $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=g(\boldsymbol{X},\boldsymbol{Y})$, where $g:\mathbb{R}^{N\times Q}\times\mathbb{R}^{N\times Q}\rightarrow\mathbb{R}$ and $\boldsymbol{Z}=\boldsymbol{X}+i\boldsymbol{Y}$ is then found by one of the following three equivalent conditions:
+### T02: 3 Equivalent Ways to Identify Stationary Point (Hjorungnes 2011, Theorem 3.2)
 
-   $$\begin{align*}1)&\ \mathcal{D}_{\boldsymbol{X}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ},\quad\mathcal{D}_{\boldsymbol{Y}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}\\2)&\ \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}\\3)&\ \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}\end{align*}$$
+$f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. A stationary point of the function $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=g(\boldsymbol{X},\boldsymbol{Y})$, where $g:\mathbb{R}^{N\times Q}\times\mathbb{R}^{N\times Q}\rightarrow\mathbb{R}$ and $\boldsymbol{Z}=\boldsymbol{X}+i\boldsymbol{Y}$ is then found by one of the following three equivalent conditions:
 
-   Note 1: They are all "long" *row vector*, since $df$ is a scalar!
+$$\begin{align*}1)&\ \mathcal{D}_{\boldsymbol{X}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ},\quad\mathcal{D}_{\boldsymbol{Y}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}\\2)&\ \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}\\3)&\ \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}\end{align*}$$
 
-   Note 2: A stationary point can be a local minimum, a local maximum, or a saddle point.
-2. **Derivative** (Hjorungnes 2011, Theorem 3.3): Let $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. We have $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. This theorem leads to $df=2\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})\rbrace$, since Definition 10 defines $df=(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\ \text{vec}(\boldsymbol{Z}^\ast)$ for $f\in\mathbb{R}$. 
-3. **Descend Direction** (Hjorungnes 2011, Theorem 3.4): Let $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. The directions where the function $f$ has the maximum and minimum rate of change with respect to $\text{vec}(\boldsymbol{Z})$ are given by $\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$ and $-\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$, respectively. Note that it is w.r.t. $Z$ conjugate! <sup>[Proof-ddsrvf]</sup>
+**Note 1**: They are all "long" *row vector*, since $df$ is a scalar!
+
+**Note 2**: A stationary point can be a local minimum, a local maximum, or a saddle point.
+
+### T03: Derivative (Hjorungnes 2011, Theorem 3.3)
+
+Let $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. We have $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. This theorem leads to $df=2\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})\rbrace$, since Definition 10 defines $df=(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\ \text{vec}(\boldsymbol{Z}^\ast)$ for $f\in\mathbb{R}$. 
+
+### T04: Descend Direction (Hjorungnes 2011, Theorem 3.4)
+
+Let $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. The directions where the function $f$ has the maximum and minimum rate of change with respect to $\text{vec}(\boldsymbol{Z})$ are given by $\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$ and $-\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$, respectively. Note that it is w.r.t. $Z$ conjugate! <sup>[Proof-ddsrvf]</sup>
 
 # Basic Complex Differential
 
@@ -229,25 +262,11 @@ where $\boldsymbol{A}_0,\boldsymbol{A}_1,\boldsymbol{Z}\in\mathbb{C}^{N\times Q}
 
 For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
 
-$$\begin{aligned}
-    \frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}
-        \frac{\partial}{\partial z_{0,0}}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}}f\\
-        \vdots & \ddots & \vdots \\
-        \frac{\partial}{\partial z_{N-1,0}}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}}f\\
-    \end{bmatrix},\\
-     \frac{\partial}{\partial\boldsymbol{Z}^\ast}f=&\begin{bmatrix}
-        \frac{\partial}{\partial z_{0,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}^\ast}f\\
-        \vdots & \ddots & \vdots \\
-        \frac{\partial}{\partial z_{N-1,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}^\ast}f\\
-    \end{bmatrix}.\\
-\end{aligned}$$
+$$\begin{aligned}\frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}\frac{\partial}{\partial z_{0,0}}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}}f \\ \vdots & \ddots & \vdots \\ \frac{\partial}{\partial z_{N-1,0}}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}}f \\ \end{bmatrix}, \\ \frac{\partial}{\partial\boldsymbol{Z}^\ast}f=&\begin{bmatrix}\frac{\partial}{\partial z_{0,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}^\ast}f \\ \vdots & \ddots & \vdots \\ \frac{\partial}{\partial z_{N-1,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}^\ast}f \\ \end{bmatrix}.\end{aligned}$$
 
 $\frac{\partial}{\partial\boldsymbol{Z}}f$ and $\frac{\partial}{\partial\boldsymbol{Z}^\ast}f$ are matrix of size $N\times Q$ and called the *gradient* of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$. Some lituratures use the following notation
 
-$$\begin{aligned}
-  \nabla_{\boldsymbol{Z}^\ast}f&\overset{\Delta}{=}\frac{\partial}{\partial\boldsymbol{Z}}f,\\ 
-  \nabla_{\boldsymbol{Z}}f&\overset{\Delta}{=}\frac{\partial}{\partial\boldsymbol{Z}^\ast}f.\\
-\end{aligned}$$
+$$\begin{aligned}\nabla_{\boldsymbol{Z}^\ast}f & \overset{\Delta}{=}\frac{\partial}{\partial\boldsymbol{Z}}f, \\ \nabla_{\boldsymbol{Z}}f & \overset{\Delta}{=}\frac{\partial}{\partial\boldsymbol{Z}^\ast}f.\end{aligned}$$
 
 Note that for a scalar real-valued function, the gradient (the direction of deepest descent) is with respect to the conjugate. 
 
@@ -255,7 +274,7 @@ Note that for a scalar real-valued function, the gradient (the direction of deep
 
 From the basic property of trace, we have
 
-$$\begin{align} df & =\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast) \\\\ &=\text{Tr}\lbrace\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\rbrace, \end{align}$$
+$$\begin{align*}df&=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast)\\&=\text{Tr}\lbrace\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\rbrace,\end{align*}$$
 
 which links the formal derivative of size $1\times NQ$
 
@@ -267,14 +286,13 @@ $$\begin{align*}\frac{\partial}{\partial\boldsymbol{Z}}f&=\boldsymbol{A}_0\\\fra
 
 by the connection
 
-$$\begin{align*}\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\end{align}$$
+$$\begin{align*}\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\end{align*}$$
 
 **Table 4**: Derivatives of $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$.
 
-Note:
+**Note 1**: Assume the matrices have suitable dimension for the matrix multiplication).
 
-1. Assume the matrices have suitable dimension for the matrix multiplication).
-2. Trace is only defined for a square matrix.
+**Note 2**: Trace is only defined for a square matrix.
 
 |$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$\frac{\partial}{\partial\boldsymbol{Z}}f$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f$|
 |:---:|:---:|:---:|
@@ -319,13 +337,7 @@ $$\mathfrak{R}\lbrace\boldsymbol{a}_0^H\boldsymbol{a}_1\rbrace=\left\langle\begi
 
 Therefore, the differential of $f$ becomes
 
-$$df=2\left\langle\begin{bmatrix}
-  \mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace \\
-  \mathfrak{I}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace 
-\end{bmatrix},\begin{bmatrix}
-  \mathfrak{R}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace \\
-  \mathfrak{I}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace 
-\end{bmatrix}\right\rangle.$$
+$$df=2\left\langle\begin{bmatrix}\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace \\ \mathfrak{I}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace\end{bmatrix},\begin{bmatrix}\mathfrak{R}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace \\ \mathfrak{I}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace\end{bmatrix}\right\rangle.$$
 
 According to the *Cauchy-Schwartz inequality*, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}_0=k\boldsymbol{a}_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
 
@@ -355,14 +367,7 @@ where $\boldsymbol{Q}=\mathbb{E}[\boldsymbol{xx}^H]$ is the covariance matrix of
 
 First of all, we can calculate the derivative of $C$
 
-$$\begin{aligned}
-  dC\overset{(a)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}d\ \left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^H\right)\right\} \\
-  =&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\left(\boldsymbol{0}+d\ \left(\boldsymbol{HQH}^H\right)\right)\right\}\\
-  \overset{(b)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\boldsymbol{QH}^H\right\}\\
-  &+\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}\left(d\ \boldsymbol{H}^H\right)\right\}\\
-  \overset{(c)}{=}&\text{Tr}\left\{\boldsymbol{QH}^H\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\right\}\\
-  &+\text{Tr}\left\{\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\left(d\ \boldsymbol{H}^\ast\right)\right\}.
-\end{aligned}$$
+$$\begin{aligned}dC\overset{(a)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}d\ \left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^H\right)\right\} \\ =&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\left(\boldsymbol{0}+d\ \left(\boldsymbol{HQH}^H\right)\right)\right\} \\ \overset{(b)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\boldsymbol{QH}^H\right\} \\ &+\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}\left(d\ \boldsymbol{H}^H\right)\right\} \\ \overset{(c)}{=}&\text{Tr}\left\{\boldsymbol{QH}^H\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\right\} \\ &+\text{Tr}\left\{\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\left(d\ \boldsymbol{H}^\ast\right)\right\}.\end{aligned}$$
 
 Let's explain the derivation above first. (a) is based on $d\ \ln\det(\boldsymbol{Z})=\text{Tr}\left\{\boldsymbol{Z}^{-1}d\boldsymbol{Z}\right\}$ (Hjorunges 2011, Proposition 3.14). (b) is due to the basic complex differential property $d\boldsymbol{Z}_0\boldsymbol{Z}_1=(d\boldsymbol{Z}_0\boldsymbol{Z}_1+\boldsymbol{Z}_0d\boldsymbol{Z}_1)$ (Hjorungnes 2011, Proposition 3.5)， which can be derived from the "procedure for finding complex differentials" in Section 3.2.1. (c) can be proved by the properties of trace function, $\text{Tr}\{\boldsymbol{AB}\}=\text{Tr}\{\boldsymbol{BA}\}$ and $\text{Tr}\{\boldsymbol{A}^T\}=\text{Tr}\{\boldsymbol{A}\}$.
 

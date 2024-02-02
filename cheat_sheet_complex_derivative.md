@@ -158,7 +158,7 @@ If $f$ is a real-valued function of a complex-valued matrix $Z$, then the comple
 
 ---
 
-**Table 2**: Identification table with different dimensions of function and variables. The table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
+**Table 2**: Identification table with different dimensions of function and variables. The table summarizes from the simplest case to the most-general case, where $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$, $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $f\in\mathbb{C}$, $\boldsymbol{f}\in\mathbb{C}^{M\times1}$, $\boldsymbol{F}\in\mathbb{C}^{M\times P}$, and $a_i\in\mathbb{C}$, $\boldsymbol{a}_i\in\mathbb{C}^{1\times N}$, $\boldsymbol{A}_i\in\mathbb{C}^{N\times Q}$, $\boldsymbol{b}_i\in\mathbb{C}^{M\times1}$, $\boldsymbol{B}_i\in\mathbb{C}^{M\times N}$, $\boldsymbol{\beta}_i\in\mathbb{C}^{M\times NQ}$, $\boldsymbol{c}_i\in\mathbb{C}^{MP\times1}$, $\boldsymbol{C}_i\in\mathbb{C}^{MP\times N}$, and $\boldsymbol{\zeta}\in\mathbb{C}^{MP\times NQ}$ (Hjorunges, 2011, Table 3.2).
 
 |Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
 |:---:|:---:|:---:|:---:|:---:|
@@ -232,13 +232,13 @@ Take the matrix form $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$ as example.
 
 # Complex-Valued Derivatives of A Scalar Function
 
-Practically the problems we encounter in the real world are related to a scalar function $f:C^{N\times Q}\rightarrow\mathbb{C}$. Most of the time the scalar function returns even a real-value scalar, with which we can order, compare, and therefore we can define minimum or maximum.
+Practically the problems we encounter in the real world are related to a scalar function $f:\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}$. Most of the time the scalar function returns even a real-value scalar, with which we can order, compare, and therefore we can define minimum or maximum.
 
 ## Derivatives of Scalar Function of Scalar Variables $f(z,z^\ast)$
 
 ## Derivatives of Scalar Function of Vector Variables $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
 
-**Table 3**: Derivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$*
+**Table 3**: Complex-Valued Derivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$ (Hjorungnes, 2011, Table 4.2)
 
 |$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|Differential $df$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|
 |:---:|:---:|:---:|:---:|

@@ -1,1 +1,5 @@
 # A-Collection-of-Cheat-Sheets
+
+In this repo, several cheat sheets that are useful in the field of communications engineering are presented. The cheat sheet includes common equations, definitions, theorems and so on within the specific topic. The range of the recorded items are far away from the complete set of the knowledge.
+
+The equations in the markdown file are written using $\LaTeX$ with single-dollar `$` and double-dollar `$$` delimiters. They will be rendered by the default rendering library in GitHub, which is currently Mathjax. There are some parsing problems to recognize correctly the equations, which result mainly from the rendering conflict of underscore between Markdown and Mathjax. Therefore, it is hardly readable in GitHub. Fortunately, GitHub provides another set of delimiters for math. With this help, a bash script `replace_dollar.sh` is created to bypass this problem, which transforms the single-dollar pair to a pair starting with `` $` `` and ending with `` `$ ``, and the double-dollar pair to the block math code as `` ```math ... ``` ``.  

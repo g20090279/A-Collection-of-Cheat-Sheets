@@ -155,3 +155,8 @@ The `<something>` can be `w` (*word*) or delimiters:
 |`Ctrl`+`w` then `w`|Switch focus between the split buffers.|
 |`Ctrl`+`w` then `x`|Swap the position of the currently focused buffer with an inactive one.|
 
+# Others
+- `:help magic`: show documentation of four different magic mode in regular expression.
+- `:ter[minal]`: open a terminal window.
+- `:sav[eas] file`: save file as
+- `K`: open man page for word under the cursor.
